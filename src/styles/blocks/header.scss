@@ -1,0 +1,103 @@
+@use '../mixins' as m;
+@use '../variables' as *;
+
+.header {
+  padding-top: 60px;
+  @include m.desktop {
+    padding-top: 30px;
+  }
+  &__inner {
+    margin-inline: auto;
+    padding-inline: 20px;
+    display: flex;
+    @include m.content-row;
+    column-gap: 18px;
+    @include m.desktop {
+      padding-inline: 20px;
+    }
+    @media (min-width: $tablet-screen) {
+      padding-inline: 50px;
+    }
+    @media (min-width: $desktop-screen) {
+      padding-inline: 100px;
+      column-gap: 40px;
+    }
+  }
+  &__logo {
+    width: 220px;
+    @include m.desktop {
+      width: 150px;
+    }
+    @include m.tablet {
+      width: 144px;
+    }
+  }
+  &__menu {
+    font-size: 20px;
+    margin-left: auto;
+    @include m.desktop {
+      font-size: 16px;
+    }
+    @include m.tablet {
+      display: none;
+    }
+    &-list {
+      padding: 0 0 0 0;
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+      @include m.desktop {
+        column-gap: 20px;
+      }
+    }
+    &-link {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: 3px;
+        background-color: var(--accent-color);
+        transition-duration: var(--transition-duration);
+      }
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__button {
+    @include m.button-puppet(var(--main-color), var(--secondary-color), var(--text-color));
+    &:hover {
+      background-color: var(--secondary-color);
+      color: var(--switch-color);
+    }
+    @include m.desktop {
+      height: 48px;
+      font-size: 16px;
+      padding-inline: 15px;
+    }
+    @include m.tablet {
+       display: none;
+    }
+  }
+  &__button-burger {
+    padding: 7px 5px 3px 5px;
+    border-radius: var(--label-border-radius);
+    @media (min-width: $tablet-screen) {
+       display: none;
+    }
+    &:hover {
+      background-color: var(--switch-color);
+      transition-duration: var(--transition-duration);
+    }
+  }
+  &__switcher-button {
+    padding-top: 5px;
+    margin-left: auto;
+  }
+}

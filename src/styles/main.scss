@@ -1,0 +1,122 @@
+@use 'variables';
+@use 'mixins' as m;
+@use 'fonts' as f;
+@use 'blocks/header';
+@use 'blocks/section';
+@use 'blocks/request';
+@use 'blocks/services';
+@use 'blocks/cases';
+@use 'blocks/steps';
+@use 'blocks/team';
+@use 'blocks/testimonials';
+@use 'blocks/contact';
+@use 'blocks/footer';
+
+.darkstyle {
+  --dark-mode: true;
+  --main-color: #191A23;
+  --secondary-color: #FFFFFF;
+  --switch-color: #292A32;
+  --text-color: #FFFFFF;
+  --reverse-text-color: #000000;
+  --card-color: #292A32;
+  --dark-bg: #292A32;
+  --link-color: #000000;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover,
+  &:focus,
+  &:active {
+    color: inherit;
+    text-decoration: none;
+  }
+  &:visited {
+    color: inherit;
+  }
+}
+p {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+  margin: 0;
+}
+h1 {
+  font-size: 60px;
+  @include m.tablet {
+    font-size: 43px;
+  }
+  @include m.desktop {
+    font-size: 52px;
+  }
+}
+h2 {
+  font-size: 40px;
+  @include m.tablet {
+    font-size: 36px;
+  }
+}
+h3 {
+  font-size: 30px;
+  @include m.tablet {
+    font-size: 26px;
+  }
+}
+h4 {
+  font-size: 20px;
+  @include m.tablet {
+    font-size: 18px;
+  }
+}
+button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  font-family: 'Space Grotesk', sans-serif;
+}
+body {
+  font: 400 18px/normal 'Space Grotesk', sans-serif;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  margin: 0px;
+}
+.grid {
+  --gridColumns: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--gridColumns), 1fr);
+  gap: 40px;
+  @for $i from 2 through 12 {
+    &--#{$i} {
+      --gridColumns: #{$i};
+    }
+  }
+  @include m.desktop-middle {
+    gap: 15px;
+  }
+  @include m.tablet {
+    gap: 30px;
+  }
+  &--2 {
+    @include m.tablet {
+      --gridColumns: 1;
+    }
+  }
+  &--3 {
+    @include m.desktop {
+      --gridColumns: 2;
+    }
+    @include m.tablet {
+      --gridColumns: 1;
+    }
+  }
+}

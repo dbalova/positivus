@@ -1,0 +1,23 @@
+$desktop-screen: 1200px;
+$desktop-middle-screen: 900px;
+$tablet-screen: 768px;
+$mobile-screen: 320px;
+$mobile-middle-screen: 390px;
+:root {
+    --dark-mode: false;
+    --font-family: 'Space Grotesk';
+    --main-color: #FFFFFF;
+    --secondary-color: #191A23;
+    --switch-color: #F3F3F3;
+    --accent-color: #B9FF66;
+    --gray-color: #292A32;
+    --text-color: #000000;
+    --reverse-text-color: #FFFFFF;
+    --card-color: #FFFFFF;
+    --button-border-radius: 14px;
+    --card-border-radius: 45px;
+    --label-border-radius: 7px;
+    --transition-duration: 0.2s;
+    --dark-bg: #191A23;
+    --link-color: #B9FF66;
+}

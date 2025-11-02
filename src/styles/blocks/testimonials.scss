@@ -1,0 +1,125 @@
+@use '../mixins' as m;
+@use '../variables' as *;
+
+.testimonials {
+    margin-inline: 20px;
+    overflow: hidden;
+    position: relative;
+    @media (min-width: $tablet-screen) {
+        margin-inline: 50px;
+    }
+    @media (min-width: $desktop-screen) {
+        margin-inline: 100px;
+    }
+    padding-top: 84px;
+    padding-bottom: 68px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 124px;
+    color: white;
+    background-color: var(--dark-bg);
+    border-radius: var(--card-border-radius);
+    @include m.tablet {
+        padding-top: 30px;
+        padding-bottom: 60px;
+        row-gap: 60px;
+    }
+    &__slider {
+        position: relative;
+        &-list {
+            display: flex;
+            scrollbar-width: none;
+            scroll-snap-type: x mandatory;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-inline: 30vw;
+        }
+        &-item {
+            scroll-snap-align: center;
+            padding: 0 18px 0 18px;
+            &:last-child {
+                padding: 0 36px 0 18px;
+            }
+            &:first-child {
+                padding: 0 18px 0 36px;
+            }
+        }
+    }
+    &-card {
+        width: 606px;
+        height: 335px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        @include m.tablet {
+            width: 320px;
+            height: 390px;
+        }
+        &__body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            padding: 48px 52px 0 52px;
+            max-width: 502px;
+            @include m.tablet {
+                padding: 30px 30px 0 30px;
+                max-width: 270px;
+                font-size: 16px;
+            }
+        }
+        &__autor {
+            padding-top: 100px;
+            @include m.tablet {
+                padding-top: 77px;
+            }
+        }
+        &__img {
+            width: 606px;
+            height: auto;
+            position: relative;
+            @include m.tablet {
+                width: 320px;
+                height: auto;
+            }
+        }
+        &__autor-name {
+            color: var(--accent-color);
+            font-size: 20px;
+        }
+    }
+    &__pointer {
+        display: flex;
+        @include m.content-row;
+        width: 100%;
+        max-width: 40vw;
+        margin-inline: auto;
+        padding-inline: 30px;
+        column-gap: 10px;
+        @include m.tablet {
+            max-width: 70vw;
+        }
+        &-buton {
+            @include m.content-center;
+            width: 48px;
+            height: 48px;
+        }
+    }
+    &__indicator {
+        &-list {
+            display: flex;
+        }
+        &-item {
+            padding: 0 10px;
+        }
+        &__button {
+            @include m.content-center;
+            width: 20x;
+            height: 20px;
+        }
+        .active {
+            filter: brightness(0) saturate(100%) invert(94%) sepia(29%) saturate(965%) hue-rotate(29deg) brightness(105%) contrast(101%);
+        }
+    }
+}
