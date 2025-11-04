@@ -18,3 +18,5 @@ Production Build:
 npm run build
 ```
 
+##GitHub Pages
+https://dbalova.github.io/positivus/
