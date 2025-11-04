@@ -1,4 +1,4 @@
-import '../styles/main.scss';
+import '../main.scss';
 import '../assets/images/logo.svg';
 import '../assets/images/main.svg';
 import '../assets/images/dribbble.svg';

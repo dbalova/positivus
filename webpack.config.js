@@ -5,11 +5,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 const loader = require('sass-loader');
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: './docs/js/index.js',
   output: {
     filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    publicPath: process.env.NODE_ENV === 'production' ? '/positivus/' : '/'
   },
   optimization: {
     minimize: true,
@@ -42,11 +43,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './docs/index.html',
       filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
-      template: './src/page2.html',
+      template: './docs/page2.html',
       filename: 'page2.html',
     }),
   ],

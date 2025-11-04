@@ -1,16 +1,16 @@
-@use 'variables';
-@use 'mixins' as m;
-@use 'fonts' as f;
-@use 'blocks/header';
-@use 'blocks/section';
-@use 'blocks/request';
-@use 'blocks/services';
-@use 'blocks/cases';
-@use 'blocks/steps';
-@use 'blocks/team';
-@use 'blocks/testimonials';
-@use 'blocks/contact';
-@use 'blocks/footer';
+@use 'styles/variables';
+@use 'styles/mixins' as m;
+@use 'styles/fonts' as f;
+@use 'styles/blocks/header';
+@use 'styles/blocks/section';
+@use 'styles/blocks/request';
+@use 'styles/blocks/services';
+@use 'styles/blocks/cases';
+@use 'styles/blocks/steps';
+@use 'styles/blocks/team';
+@use 'styles/blocks/testimonials';
+@use 'styles/blocks/contact';
+@use 'styles/blocks/footer';
 
 .darkstyle {
   --dark-mode: true;
