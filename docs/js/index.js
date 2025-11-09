@@ -35,6 +35,7 @@ import '../assets/images/twitter.svg';
 import '../assets/images/facebook.svg';
 import '../assets/images/social_light.svg';
 import '../assets/images/mode.svg';
+import '../assets/images/sprite.svg';
 
 let styleMode = localStorage.getItem('styleMode');
 const styleToggle = document.querySelector('.header__switcher-button');
@@ -46,16 +47,16 @@ const enableDarkStyle = () => {
 
 const disableDarkStyle = () => {
   document.body.classList.remove('darkstyle');
-  localStorage.setItem('styleMode', null);
+  localStorage.setItem('styleMode', 'light');
 }
 
 styleToggle.addEventListener('click', () => {
   styleMode = localStorage.getItem('styleMode');
   console.log(styleMode);
   if (styleMode !== 'dark') {
-    enableDarkStyle();
+  enableDarkStyle();
   } else {
-    disableDarkStyle();
+  disableDarkStyle();
   }
 });
 if (styleMode === 'dark') {
@@ -66,21 +67,21 @@ document.addEventListener('DOMContentLoaded', function () {
   const stepsItems = document.querySelectorAll('.steps__item');
 
   stepsItems.forEach(item => {
-    const header = item.querySelector('.steps__header');
-    const body = item.querySelector('.steps__body');
+  const header = item.querySelector('.steps__header');
+  const body = item.querySelector('.steps__body');
 
-    header.addEventListener('click', function () {
-      const isOpen = item.classList.contains('open');
-      if (isOpen) {
-        item.classList.remove('open');
-        body.style.maxHeight = '0';
-        body.style.opacity = '0';
-      } else {
-        item.classList.add('open');
-        body.style.maxHeight = body.scrollHeight + 'px';
-        body.style.opacity = '1';
-      }
-    });
+  header.addEventListener('click', function () {
+    const isOpen = item.classList.contains('open');
+    if (isOpen) {
+    item.classList.remove('open');
+    body.style.maxHeight = '0';
+    body.style.opacity = '0';
+    } else {
+    item.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    body.style.opacity = '1';
+    }
+  });
   });
 });
 
@@ -101,29 +102,29 @@ function removeActive() {
 
 function nextSlide() {
   if (currentSlideIndex <= (slides.length - 2)) {
-    removeActive();
-    currentSlideIndex++;
-    slider.scrollBy({
-      left: 100,
-      behavior: 'smooth'
-    });
-    addActive();
+  removeActive();
+  currentSlideIndex++;
+  slider.scrollBy({
+    left: 100,
+    behavior: 'smooth'
+  });
+  addActive();
   }
-  if (currentSlideIndex == (slides.length - 1)) { arrowRight.disablet = true;}
+  if (currentSlideIndex == (slides.length - 1)) { arrowRight.disabled = true;}
 }
 
 function previousSlide() {
   if (currentSlideIndex >= 1) {
-    removeActive();
-    currentSlideIndex--;
-    slider.scrollBy({
-      left: -100,
-      behavior: 'smooth'
-    });
-    addActive();
+  removeActive();
+  currentSlideIndex--;
+  slider.scrollBy({
+    left: -100,
+    behavior: 'smooth'
+  });
+  addActive();
   }
   if (currentSlideIndex == 0) {
-    arrowLeft.disablet = true;
+  arrowLeft.disablet = true;
   }
 }
 arrowLeft.addEventListener('click', previousSlide);

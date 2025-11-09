@@ -1,47 +1,47 @@
 @use 'variables' as *;
 
 @mixin content-center() {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 @mixin content-row() {
-    justify-content: space-between;
-    align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 @mixin desktop {
-    @media (max-width: $desktop-screen) {
-        @content;
-    }
+  @media (max-width: $desktop-screen) {
+    @content;
+  }
 }
 @mixin desktop-middle {
-    @media (max-width: $desktop-middle-screen) {
-        @content;
-    }
+  @media (max-width: $desktop-middle-screen) {
+    @content;
+  }
 }
 @mixin tablet {
-    @media (max-width: $tablet-screen) {
-        @content;
-    }
+  @media (max-width: $tablet-screen) {
+    @content;
+  }
 }
 @mixin mobile {
-    @media (max-width: $mobile-screen) {
-        @content;
-    }
+  @media (max-width: $mobile-screen) {
+    @content;
+  }
 }
 @mixin mobile-middle {
-    @media (max-width: $mobile-middle-screen) {
-        @content;
-    }
+  @media (max-width: $mobile-middle-screen) {
+    @content;
+  }
 }
 @mixin button-puppet($bg-color, $border-color, $text-color) {
-    display: flex;
-    @include content-center;
-    min-height: 68px;
-    padding-inline: 35px;
-    font-size: 20px;
-    color: $text-color;
-    background-color: $bg-color;
-    border: 1px solid $border-color;
-    border-radius: var(--button-border-radius);
-    transition: 0.3s;
+  display: flex;
+  @include content-center;
+  min-height: 68px;
+  padding-inline: 35px;
+  font-size: 20px;
+  color: $text-color;
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  border-radius: var(--button-border-radius);
+  transition: 0.3s;
 }

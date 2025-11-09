@@ -5,37 +5,37 @@
   padding-block: 70px;
   overflow-x: hidden;
   @include m.tablet {
-    padding-block: 40px;
+  padding-block: 40px;
   }
   @include m.desktop {
-    padding-block: 50px;
+  padding-block: 50px;
   }
   &__header {
+  padding-inline: 100px;
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  margin-bottom: 80px;
+  @media (min-width: $tablet-screen) {
+    padding-inline: 50px;
+  }
+  @media (min-width: $desktop-screen) {
     padding-inline: 100px;
-    display: flex;
-    align-items: center;
-    column-gap: 40px;
-    margin-bottom: 80px;
-    @media (min-width: $tablet-screen) {
-      padding-inline: 50px;
-    }
-    @media (min-width: $desktop-screen) {
-      padding-inline: 100px;
-    }
-    @include m.tablet {
-      flex-direction: column;
-      row-gap: 30px;
-      text-align: center;
-      margin-bottom: 40px;
-    }
+  }
+  @include m.tablet {
+    flex-direction: column;
+    row-gap: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
   }
   &__description {
-    max-width: 580px;
+  max-width: 580px;
   }
   &__title {
-    padding-inline: 7px;
-    background-color: var(--accent-color);
-    border-radius: var(--label-border-radius);
-    color: black;
+  padding-inline: 7px;
+  background-color: var(--accent-color);
+  border-radius: var(--label-border-radius);
+  color: black;
   }
 }

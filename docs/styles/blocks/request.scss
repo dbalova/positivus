@@ -2,130 +2,116 @@
 @use '../variables' as *;
 
 .request {
-    padding-inline: 20px;
-    margin: auto;
+  padding-inline: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  @media (min-width: $tablet-screen) {
+    padding-inline: 50px;
+  }
+  @media (min-width: $desktop-screen) {
+    padding-inline: 100px;
+  }
+  &__body {
+    overflow: visible;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    column-gap: 30px;
+    @include m.tablet {
+      flex-direction: column;
+    }
+  }
+  &__body-img {
+  overflow: visible;
+  --star-1-transform: translate(0, 0);
+  --star-2-transform: translate(0, 0);
+  --ellipse-1-transform: rotate(0deg);
+  --ellipse-2-transform: rotate(0deg);
+  --ellipse-3-transform: rotate(0deg);
+  --megafon-transform: translate(0, 0) rotate(0deg);
+  --circle-1-transform: translate(0, 0);
+  --circle-2-transform: translate(0, 0);
+  --circle-3-transform: translate(0, 0);
+  --circle-4-transform: translate(0, 0) scale(1);
+  &:hover {
+    --star-1-transform: translate(-80px, -20px);
+    --star-2-transform: translate(-10px, -40px);
+    --ellipse-1-transform: rotate(5deg);
+    --ellipse-2-transform: rotate(-5deg);
+    --ellipse-3-transform: rotate(5deg);
+    --megafon-transform: translate(5px, -3px) rotate(12deg);
+    --circle-1-transform: translate(80px, -40px);
+    --circle-2-transform: translate(-80px, -40px);
+    --circle-3-transform: translate(-30px, -10px);
+    --circle-4-transform: translate(-2px, 4px) scale(1.05);
+  }
+  width: 600px;
+  height: 515px;
+  @include m.desktop {
+    width: 50%;
+    height: auto;
+  }
+  @include m.tablet {
+    order: -1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+  &__body-text {
     display: flex;
     flex-direction: column;
-    row-gap: 60px;
-    @media (min-width: $tablet-screen) {
-        padding-inline: 50px;
+    align-items: start;
+    max-width: 531px;
+    row-gap: 35px;
+    @include m.tablet {
+      display: contents;
     }
-    @media (min-width: $desktop-screen) {
-        padding-inline: 100px;
+  }
+  &__title {
+    @include m.tablet {
+      order: -2;
+      margin-bottom: 10px;
     }
-    &__body {
+  }
+  &__description {
+    font-size: 20px;
+    line-height: 1.4;
+    @include m.tablet {
+      margin-bottom: 40px;
+    }
+  }
+  &__button {
+    @include m.button-puppet(var(--secondary-color), var(--secondary-color), var(--main-color));
+    &:hover {
+      background-color: var(--accent-color);
+      color: black;
+    }
+    @include m.tablet {
+      width: 100%;
+    }
+  }
+  &__company {
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 37px;
+      @include m.desktop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20px;
+        overflow-y: scroll;
+      }
+    }
+    &-item {
+      @include m.desktop {
         display: flex;
-        justify-content: space-between;
-        align-items: start;
-        column-gap: 30px;
-        @include m.tablet {
-            flex-direction: column;
-        }
+        justify-content: center;
+      }
     }
-    &__body-img {
-        overflow: visible;
-        .move {
-            transition: transform 0.5s ease;
-            transform-origin: center;
-        }
-        &:hover {
-            .star-1 {
-                transform: translate(-80px, -20px);
-            }
-            .star-2 {
-                transform: translate(-10px, -40px);
-            }
-            .ellipse-1,
-            .ellipse-3 {
-                transform: rotate(5deg);
-            }
-            .ellipse-2 {
-                transform: rotate(-5deg);
-            }
-            .megafon {
-                transform: translate(5px, -3px) rotate(12deg);
-            }
-            .circle-1 {
-                transform: translate(80px, -40px);
-            }
-            .circle-2 {
-                transform: translate(-80px, -40px);
-            }
-            .circle-3 {
-                transform: translate(-30px, -10px);
-            }
-            .circle-4,
-            .circle-5,
-            .circle-6,
-            .circle-7 {
-                transform: translate(-2px, 4px) scale(1.2);
-            }
-        }
-        width: 600px;
-        height: 515px;
-        @include m.desktop {
-            width: 50%;
-            height: auto;
-        }
-        @include m.tablet {
-            order: -1;
-            width: 100%;
-            margin-bottom: 20px;
-        }
+    &-img {
+      filter: grayscale(1);
     }
-    &__body-text {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        max-width: 531px;
-        row-gap: 35px;
-        @include m.tablet {
-            display: contents;
-        }
-    }
-    &__title {
-        @include m.tablet {
-            order: -2;
-            margin-bottom: 10px;
-        }
-    }
-    &__description {
-        font-size: 20px;
-        line-height: 1.4;
-        @include m.tablet {
-            margin-bottom: 40px;
-        }
-    }
-    &__button {
-        @include m.button-puppet(var(--secondary-color), var(--secondary-color), var(--main-color));
-        &:hover {
-            background-color: var(--accent-color);
-            color: black;
-        }
-        @include m.tablet {
-            width: 100%;
-        }
-    }
-    &__company {
-        &-list {
-            display: flex;
-            justify-content: space-between;
-            column-gap: 37px;
-            @include m.desktop {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                row-gap: 20px;
-                overflow-y: scroll;
-            }
-        }
-        &-item {
-            @include m.desktop {
-                display: flex;
-                justify-content: center;
-            }
-        }
-        &-img {
-            filter: grayscale(1);
-        }
-    }
+  }
 }
